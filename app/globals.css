@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 20px;
+  }
+
+  body {
+    @apply bg-cream text-charcoal antialiased;
+  }
+
+  ::selection {
+    background-color: rgb(196 161 109 / 0.2);
+    color: #2E2E2E;
+  }
+}
+
+@layer utilities {
+  .tracking-luxury {
+    letter-spacing: 0.25em;
+  }
+}

@@ -19,7 +19,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'À propos', href: '/a-propos' },
   { label: 'Mes services', href: '/services' },
   { label: 'Créations sur mesure', href: '/creations' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Ressources', href: '/ressources' },
 ]
 
 export const SERVICES: Service[] = [

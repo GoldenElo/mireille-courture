@@ -30,6 +30,17 @@ const STEPS = [
   'Livraison',
 ]
 
+const GALLERY = [
+  { src: '/images/gallery/creation-1.jpg', label: 'Robe de soirée' },
+  { src: '/images/gallery/creation-2.jpg', label: 'Ensemble tailleur' },
+  { src: '/images/gallery/creation-3.jpg', label: 'Robe cocktail' },
+  { src: '/images/gallery/creation-4.jpg', label: 'Veste sur mesure' },
+  { src: '/images/gallery/creation-5.jpg', label: 'Robe de mariée' },
+  { src: '/images/gallery/creation-6.jpg', label: 'Tenue de ville' },
+  { src: '/images/gallery/creation-7.jpg', label: 'Ensemble casual chic' },
+  { src: '/images/gallery/creation-8.jpg', label: 'Robe longue' },
+]
+
 export default function CreationsPage() {
   return (
     <>
@@ -42,6 +53,7 @@ export default function CreationsPage() {
         </div>
       </section>
 
+      {/* L'art du sur mesure */}
       <section className="py-20 md:py-32 bg-cream">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -81,6 +93,48 @@ export default function CreationsPage() {
                 Commencer votre projet
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galerie */}
+      <section className="py-20 md:py-32 bg-linen">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="mb-14 text-center">
+            <p className="text-xs tracking-luxury uppercase text-gold-text mb-3">Nos réalisations</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-light text-charcoal">
+              La galerie
+            </h2>
+            <div className="w-10 h-px bg-gold mt-5 mx-auto" />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {GALLERY.map((item, i) => (
+              <div
+                key={item.src}
+                className={`relative overflow-hidden bg-cream group ${
+                  i === 0 || i === 4 ? 'md:row-span-2 aspect-[3/4] md:aspect-auto' : 'aspect-square'
+                }`}
+              >
+                <ImageWithFallback
+                  src={item.src}
+                  alt={item.label}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  fallbackLabel={item.label}
+                />
+                <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300" />
+                <p className="absolute bottom-3 left-3 right-3 text-white text-xs tracking-luxury uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button href="/contact" variant="outline">
+              Commander une création
+            </Button>
           </div>
         </div>
       </section>

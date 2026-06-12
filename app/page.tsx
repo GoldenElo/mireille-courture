@@ -4,7 +4,6 @@ import Services from '@/sections/Services'
 import About from '@/sections/About'
 import Creations from '@/sections/Creations'
 import Testimonials from '@/sections/Testimonials'
-import Booking from '@/sections/Booking'
 import CTA from '@/sections/CTA'
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/constants'
 
@@ -21,7 +20,6 @@ export default function Home() {
       <About />
       <Creations />
       <Testimonials />
-      <Booking />
       <CTA />
     </>
   )

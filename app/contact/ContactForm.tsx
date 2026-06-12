@@ -13,7 +13,7 @@ export default function ContactForm() {
     const data = new FormData(form)
 
     try {
-      await fetch('/', {
+      await fetch('/netlify-forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
